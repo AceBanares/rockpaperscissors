@@ -1,0 +1,12 @@
+.content-box {
+    margin: 20px;
+}
+
+.card {
+    width: 50%;
+    margin: auto;
+}
+
+#gameResult {
+    background-color: yellow;
+}

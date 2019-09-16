@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+</head>
+
+<body>
+  <div class="card">
+    <div class="card-header">
+      <h4>ROCK-PAPER-SCISSORS</h4>
+    </div>
+    <div class="container px-lg-5">
+      <div class="row mx-lg-n5">
+        <div class="col py-3 px-lg-5 border bg-light">
+          <h4 id="gameWins"></h4>
+        </div>
+        <div class="col py-3 px-lg-5 border bg-light">
+          <h4 id="gameTies"></h4>
+        </div>
+        <div class="col py-3 px-lg-5 border bg-light">
+          <h4 id="gameLoses"></h4>
+        </div>
+      </div>
+    </div>
+    <form id="gameForm" class="content-box form-inline">
+      <div class="form-group form-check form-check-inline">
+        <input id="optionRock" class="form-check-input" type="radio" name="options" value="ROCK" checked>
+        <label for="optionRock" class="form-check-label"><h3>Rock</h3></label>
+      </div>
+      <div class="form-group form-check form-check-inline">
+        <input id="optionPaper" class="form-check-input" type="radio" name="options" value="PAPER">
+        <label for="optionPaper" class="form-check-label"><h3>Paper</h3></label>
+      </div>
+      <div class="form-group form-check form-check-inline">
+        <input id="optionScissors" class="form-check-input" type="radio" name="options" value="SCISSORS">
+        <label for="optionScissors" class="form-check-label"><h3>Scissors</h3></label>
+      </div>
+      <button class="btn btn-dark btn-lg mb-2" type="button" id="sendChoice">Choose</button>
+      <div class="form-group mx-sm-1 mb-2">
+        <label for="repeatValue" class="sr-only">Repeat</label>
+        <input type="text" class="form-control form-control-lg col-5" id="repeatValue" placeholder="Repeat">
+      </div>
+    </form>
+    <div class="content-box">
+      <h2 id="playerChoice"></h2>
+      <h2 id="compChoice"></h2>
+      <h1 id="gameResult"></h1>
+    </div>
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>
