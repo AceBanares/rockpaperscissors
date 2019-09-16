@@ -14,6 +14,9 @@ const txtGameWins = document.querySelector("#gameWins");
 const txtGameTies = document.querySelector("#gameTies");
 const txtGameLoses = document.querySelector("#gameLoses");
 const txtRepeatValue = document.querySelector("#repeatValue");
+const imgPlayerChoice = document.querySelector("#playerImg");
+const imgCompChoice = document.querySelector("#compImg");
+const rdoGameChoices = document.querySelectorAll(".form-check-input");
 
 function getRandom(max = 1, min = 0) {
   // get a random number from min (default: 0) to max (default: 1)
@@ -47,6 +50,16 @@ function displayUpdate(
   txtGameLoses.textContent = `Loses: ${gameLoses}`;
 }
 
+function updateImage(compChoice) {
+  imgPlayerChoice.src = `images\\${getPlayerChoice()}.png`;
+  if (compChoice.target) {
+    imgCompChoice.src = "";
+    txtGameResult.textContent = "";
+  } else {
+    imgCompChoice.src = `images\\${compChoice}.png`;
+  }
+}
+
 function getWinner() {
   // use the functions above to get both choices
   const playerChoice = getPlayerChoice();
@@ -68,7 +81,7 @@ function getWinner() {
       gameStats.gameLoses++;
       break;
     case 0:
-      gameResult = "It's a TIE!";
+      gameResult = "You TIED!";
       gameStats.gameTies++;
       break;
     case 1:
@@ -84,6 +97,7 @@ function getWinner() {
 
   resultTable.push(info);
   displayUpdate(info);
+  updateImage(compChoice);
 }
 
 // RESULTS MATRIX
@@ -98,15 +112,22 @@ function getWinner() {
 
 // wait for player to click the button to declare the winner
 btnPlayerChoice.addEventListener("click", () => {
-  const repeatValue =
-    isNaN(txtRepeatValue.value) || txtRepeatValue.value == ""
-      ? 1
-      : txtRepeatValue.value;
+  let repeatValue = txtRepeatValue.value;
+  if (isNaN(repeatValue) || repeatValue == "") {
+    repeatValue = 1;
+    txtRepeatValue.value = 1;
+  }
   for (let repeat = 0; repeat < repeatValue; repeat++) {
     getWinner();
   }
   // txtRepeatValue.value = "";
 });
 
+rdoGameChoices.forEach(choice =>
+  choice.addEventListener("change", updateImage)
+);
+
 // initialize the display
 displayUpdate();
+
+// naismith - collaborator

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>ROCK-PAPER-SCISSORS</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
 </head>
@@ -47,11 +47,26 @@
         <input type="text" class="form-control form-control-lg col-5" id="repeatValue" placeholder="Repeat">
       </div>
     </form>
-    <div class="content-box">
+    <div class="content-box result-box" hidden>
       <h2 id="playerChoice"></h2>
       <h2 id="compChoice"></h2>
-      <h1 id="gameResult"></h1>
+      <!-- <h1 id="gameResult"></h1>
+      <img id="playerImg" class="rounded float-left" src="" alt="">
+      <img id="compImg" class="rounded float-right" src="" alt=""> -->
     </div>
+    <div class="container px-lg-5">
+        <div class="row mx-lg-n5">
+          <div class="col py-3 px-lg-5 border bg-light">
+              <img id="playerImg" class="rounded mx-auto d-block" src="images/rock.png" alt="">
+          </div>
+          <div class="col py-3 px-lg-5 border bg-light">
+              <h2 id="gameResult"></h2>
+          </div>
+          <div class="col py-3 px-lg-5 border bg-light">
+              <img id="compImg" class="rounded mx-auto d-block" src="" alt="">
+          </div>
+        </div>
+      </div>
   </div>
 
 
